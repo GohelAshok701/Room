@@ -36,6 +36,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsersHolder> {
     public void onBindViewHolder(@NonNull UsersHolder holder, int position) {
         holder.txtFirstName.setText(userList.get(position).getFirstName());
         holder.txtLastName.setText(userList.get(position).getLastName());
+        if (userList.get(position).getEmail() != null) {
+            holder.txtEmail.setText(userList.get(position).getEmail());
+        } else {
+            holder.txtEmail.setText("--");
+        }
     }
 
     @Override
@@ -45,12 +50,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsersHolder> {
 
     public class UsersHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtFirstName, txtLastName;
+        private TextView txtFirstName, txtLastName, txtEmail;
 
         public UsersHolder(@NonNull View itemView) {
             super(itemView);
             txtFirstName = itemView.findViewById(R.id.txtFirstName);
             txtLastName = itemView.findViewById(R.id.txtLastName);
+            txtEmail = itemView.findViewById(R.id.txtEmail);
         }
     }
 }

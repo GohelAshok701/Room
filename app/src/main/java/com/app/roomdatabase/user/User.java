@@ -18,6 +18,9 @@ public class User implements Serializable {
     @ColumnInfo(name = "last_name")
     public String lastName;
 
+    @ColumnInfo(name = "email")
+    public String email;
+
     public int getUid() {
         return uid;
     }
@@ -42,12 +45,21 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "uid=" + uid +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

@@ -21,6 +21,14 @@
         android:textSize="@dimen/_12sdp"
         tools:text="Gohel" />
 
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_12sdp"
+        tools:text="ashok@gmail.com" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/_2sdp"

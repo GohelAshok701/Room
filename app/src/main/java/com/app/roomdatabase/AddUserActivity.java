@@ -33,12 +33,14 @@ public class AddUserActivity extends AppCompatActivity implements View.OnClickLi
                 User user = new User();
                 user.firstName = binding.edtFirstName.getText().toString();
                 user.lastName = binding.edtLastName.getText().toString();
+                user.email = binding.edtEmail.getText().toString();
                 RoomApplication.appDatabase.userDao().insertAll(user);
 
                 Toast.makeText(this, getResources().getString(R.string.user_added), Toast.LENGTH_SHORT).show();
 
                 binding.edtFirstName.setText("");
                 binding.edtLastName.setText("");
+                binding.edtEmail.setText("");
             }
         } else if (v.getId() == R.id.btnAllUsers) {
             startActivity(new Intent(AddUserActivity.this, UsersActivity.class));
